@@ -1,0 +1,100 @@
+// Glitch performance patch
+name."k1_dx12_async_res_fix"
+display_name."Async Asset Loading Crash Fix"
+description."Required stability fix that prevents crashes when Async Background Asset Loading is enabled."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."fence_1411df7ac_rdi"
+		va."0x1411DF7AC"
+		orig."48 8B 78 38 48 8B 86 88 00 00 00"
+		stub_bytes."9C 51 52 48 83 EC 28 48 85 C0 74 0A 31 C9 48 89 C2 E8 00 00 00 00 48 89 C7 48 83 C4 28 5A 59 9D 48 8B 86 88 00 00 00"
+		stub_fixups.arr;
+			.obj;
+				off:18
+				target_va."0x141251750"
+	.obj;
+		id."fence_1411df7b7_rsi"
+		va."0x1411DF7B7"
+		orig."48 8B 70 38 48 8B 02"
+		stub_bytes."9C 51 52 48 83 EC 28 48 85 C0 74 0A 31 C9 48 89 C2 E8 00 00 00 00 48 89 C6 48 83 C4 28 5A 59 9D 48 8B 02"
+		stub_fixups.arr;
+			.obj;
+				off:18
+				target_va."0x141251750"
+	.obj;
+		id."fence_1411df7c1_r12"
+		va."0x1411DF7C1"
+		orig."4C 8B 60 38 B8 A8 01 00 00"
+		stub_bytes."9C 51 52 48 83 EC 28 48 85 C0 74 0A 31 C9 48 89 C2 E8 00 00 00 00 49 89 C4 48 83 C4 28 5A 59 9D B8 A8 01 00 00"
+		stub_fixups.arr;
+			.obj;
+				off:18
+				target_va."0x141251750"
+	.obj;
+		id."fence_1411df7d8_r15"
+		va."0x1411DF7D8"
+		orig."4C 8B 78 38 48 8D 81 A8 21 01 00"
+		stub_bytes."9C 51 52 48 83 EC 28 48 85 C0 74 0A 31 C9 48 89 C2 E8 00 00 00 00 49 89 C7 48 83 C4 28 5A 59 9D 48 8D 81 A8 21 01 00"
+		stub_fixups.arr;
+			.obj;
+				off:18
+				target_va."0x141251750"
+	.obj;
+		id."fence_1411df7f0_r14"
+		va."0x1411DF7F0"
+		orig."48 8B 00 4C 8B 70 38"
+		stub_bytes."48 8B 00 52 41 50 48 83 EC 20 48 85 C0 74 0A 31 C9 48 89 C2 E8 00 00 00 00 49 89 C6 48 83 C4 20 41 58 5A"
+		stub_fixups.arr;
+			.obj;
+				off:21
+				target_va."0x141251750"
+	.obj;
+		id."fence_1412707b1_rdx"
+		va."0x1412707B1"
+		orig."48 8B CB 48 8B 52 38"
+		stub_bytes."41 50 48 83 EC 28 48 85 D2 74 0B 48 89 D9 E8 00 00 00 00 48 89 C2 48 89 D9 48 83 C4 28 41 58"
+		stub_fixups.arr;
+			.obj;
+				off:15
+				target_va."0x141251750"
+	.obj;
+		id."fence_141270828_rdx"
+		va."0x141270828"
+		orig."45 33 C0 48 8B CB 48 8B 52 38"
+		stub_bytes."48 83 EC 20 48 85 D2 74 0B 48 89 D9 E8 00 00 00 00 48 89 C2 45 31 C0 48 89 D9 48 83 C4 20"
+		stub_fixups.arr;
+			.obj;
+				off:13
+				target_va."0x141251750"
+	.obj;
+		id."fence_14170409d_rdx"
+		va."0x14170409D"
+		orig."48 8B F2 48 8B 52 38 4C 8B F1"
+		stub_bytes."48 89 D6 49 89 CE 41 51 48 83 EC 28 48 85 D2 74 0A 31 C9 E8 00 00 00 00 48 89 C2 48 83 C4 28 41 59"
+		stub_fixups.arr;
+			.obj;
+				off:20
+				target_va."0x141251750"
+	.obj;
+		id."fence_1417040ca_rdx"
+		va."0x1417040CA"
+		orig."48 8B 0D 4F 1A 04 05 48 8B 57 38"
+		stub_bytes."48 8B 0D 00 00 00 00 51 48 83 EC 28 48 89 FA 48 85 D2 74 08 E8 00 00 00 00 48 89 C2 41 B8 10 00 00 00 48 83 C4 28 59"
+		stub_fixups.arr;
+			.obj;
+				off:3
+				target_va."0x146745B20"
+			.obj;
+				off:21
+				target_va."0x141251750"
+	.obj;
+		id."fence_141704177_rdx"
+		va."0x141704177"
+		orig."48 8B FA 48 8B 52 38 48 8B E9"
+		stub_bytes."48 89 D7 48 89 CD 41 51 48 83 EC 28 48 85 D2 74 0A 31 C9 E8 00 00 00 00 48 89 C2 48 83 C4 28 41 59"
+		stub_fixups.arr;
+			.obj;
+				off:20
+				target_va."0x141251750"

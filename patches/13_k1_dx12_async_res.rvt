@@ -1,0 +1,14 @@
+// Glitch performance patch
+name."k1_dx12_async_res"
+display_name."Async Background Asset Loading"
+description."Enables background DirectX 12 resource creation to reduce traversal and streaming stutter."
+enabled.true
+required_manifests.arr;
+	."k1_dx12_async_res_fix"
+
+patches.arr;
+	.obj;
+		id."enable_dx12_async_res_creation"
+		va."0x14151EFE5"
+		orig."C7 01 01 01 00 00"
+		bytes."C7 01 01 01 00 01"

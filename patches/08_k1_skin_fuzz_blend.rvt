@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."k1_skin_fuzz_blend"
+display_name."Skip Skin Fuzz Post-Pass"
+description."Skips a subtle full-resolution skin fuzz blending pass for extra GPU performance."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."skip_skin_fuzz_blend"
+		va."0x1410B5266"
+		orig."0F 84 25 02 00 00"
+		bytes."E9 26 02 00 00 90"

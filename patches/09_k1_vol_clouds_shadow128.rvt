@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."k1_vol_clouds_shadow128"
+display_name."Half-Res Cloud Shadows"
+description."Halves volumetric cloud shadow map resolution to reduce GPU load with virtually no visible change."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."vol_clouds_shadow_128"
+		va."0x145337FA4"
+		orig."00 01 00 00"
+		bytes."80 00 00 00"

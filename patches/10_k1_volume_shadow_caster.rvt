@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."k1_volume_shadow_caster"
+display_name."Skip Smoke & Fog Shadow Casting"
+description."Stops volumetric smoke and fog effects from casting extra shadows onto the scene."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."skip_volume_shadow_caster"
+		va."0x1413A9839"
+		orig."0F 84 96 05 00 00"
+		bytes."E9 97 05 00 00 90"

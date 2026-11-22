@@ -1,0 +1,37 @@
+// Glitch performance patch
+name."R1b_prngbulk"
+display_name."Faster Random Number Generation"
+description."Optimizes internal random number generation on the CPU with identical results."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."bulk100_loop"
+		va."0x14103A673"
+		orig."49 8B DC E8 65 E5 55 00 89 44 9D 50 48 FF C3 48 83 FB 64 7C EE"
+		stub_bytes."49 8B DC 50 51 52 41 50 41 51 41 52 41 53 44 8B 05 00 00 00 00 44 8B 0D 00 00 00 00 44 8B 15 00 00 00 00 44 8B 1D 00 00 00 00 41 8B CB C1 E9 0B 41 8B D0 C1 E2 0B 41 33 D0 33 CA C1 E9 08 41 33 CB 33 CA 45 89 C8 45 89 D1 45 89 DA 41 89 CB 8B C1 89 44 9D 50 48 FF C3 48 83 FB 64 7C CC 44 89 05 00 00 00 00 44 89 0D 00 00 00 00 44 89 15 00 00 00 00 44 89 1D 00 00 00 00 41 5B 41 5A 41 59 41 58 5A 59 58"
+		stub_fixups.arr;
+			.obj;
+				off:17
+				target_va."0x1467D8720"
+			.obj;
+				off:24
+				target_va."0x1467D8724"
+			.obj;
+				off:31
+				target_va."0x1467D8728"
+			.obj;
+				off:38
+				target_va."0x1467D872C"
+			.obj;
+				off:97
+				target_va."0x1467D8720"
+			.obj;
+				off:104
+				target_va."0x1467D8724"
+			.obj;
+				off:111
+				target_va."0x1467D8728"
+			.obj;
+				off:118
+				target_va."0x1467D872C"

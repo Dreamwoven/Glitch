@@ -1,0 +1,32 @@
+// Glitch performance patch
+name."R1a_divmask"
+display_name."Faster Texture Hashing"
+description."Speeds up CPU texture table lookups with identical visual output."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."S1_div_rbx"
+		va."0x14103A5F9"
+		orig."33 D2 48 F7 F3 48 63 C2"
+		stub_bytes."51 48 85 DB 74 12 48 89 D9 48 FF C9 48 85 D9 75 07 48 21 C1 89 CA EB 05 33 D2 48 F7 F3 48 63 C2 59"
+	.obj;
+		id."S2_div_rbx"
+		va."0x14103A708"
+		orig."33 D2 48 F7 F3 48 63 C2"
+		stub_bytes."51 48 85 DB 74 12 48 89 D9 48 FF C9 48 85 D9 75 07 48 21 C1 89 CA EB 05 33 D2 48 F7 F3 48 63 C2 59"
+	.obj;
+		id."S3_div_rcx"
+		va."0x14103AB72"
+		orig."33 D2 48 F7 F1 48 63 C2"
+		stub_bytes."53 48 85 C9 74 12 48 89 CB 48 FF CB 48 85 CB 75 07 48 21 C3 89 DA EB 05 33 D2 48 F7 F1 48 63 C2 5B"
+	.obj;
+		id."S4_div_rcx"
+		va."0x14103AD1A"
+		orig."33 D2 48 F7 F1 48 63 C2"
+		stub_bytes."53 48 85 C9 74 12 48 89 CB 48 FF CB 48 85 CB 75 07 48 21 C3 89 DA EB 05 33 D2 48 F7 F1 48 63 C2 5B"
+	.obj;
+		id."S5_div_rcx"
+		va."0x14103AF07"
+		orig."33 D2 48 F7 F1 48 63 C2"
+		stub_bytes."53 48 85 C9 74 12 48 89 CB 48 FF CB 48 85 CB 75 07 48 21 C3 89 DA EB 05 33 D2 48 F7 F1 48 63 C2 5B"

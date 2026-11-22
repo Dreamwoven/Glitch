@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."envprobe_starve23"
+display_name."Smoother Lighting Probe Updates"
+description."Spreads out environment lighting updates to reduce periodic frame-time spikes."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."starve_threshold_23"
+		va."0x14108A511"
+		orig."83 F8 05"
+		bytes."83 F8 17"

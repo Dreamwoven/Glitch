@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."P6_fogres_075"
+display_name."Volumetric Fog Depth 75%"
+description."Lowers volumetric fog depth precision by 25% for a noticeable GPU speedup with minimal visual difference."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."fog_z_scale"
+		va."0x140FB5473"
+		orig."48 8D 81 3C 1B 01 00 B9 DC 01 00 00 48 0F 44 C1 49 8B CC 48 63 18"
+		stub_bytes."48 8D 81 3C 1B 01 00 B9 DC 01 00 00 48 0F 44 C1 49 8B CC 48 63 18 51 48 89 D9 48 C1 E9 02 48 29 CB 59"

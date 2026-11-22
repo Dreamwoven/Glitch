@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."k1_model_strand_shadows"
+display_name."Skip Local Hair & Fur Shadows"
+description."Stops hair and fur strands from casting extra shadows from small local lights to save GPU time."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."skip_model_strand_shadows"
+		va."0x141116726"
+		orig."0F 84 6F 02 00 00"
+		bytes."E9 70 02 00 00 90"

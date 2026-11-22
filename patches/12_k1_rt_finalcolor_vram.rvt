@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."k1_rt_finalcolor_vram"
+display_name."Free Unused Ray-Tracing VRAM"
+description."Prevents the game from allocating unused ray-tracing buffers when ray tracing is turned off (saves ~26-58 MB VRAM)."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."gate_rt_finalcolor_0_1"
+		va."0x14120C8B9"
+		orig."49 83 F8 53 74 30 49 83 F8 54 74 2A 49 83 F8 57 74 24 49 83 F8 58 74 1E 49 83 F8 59 74 18 49 83 F8 5B 74 12 49 83 F8 5D 74 0C 49 83 F8 5C 74 06 49 83 F8 5A 75 14"
+		bytes."49 83 F8 53 72 44 49 83 F8 5F 77 3E EB 28 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90"

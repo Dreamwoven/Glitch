@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."P5_terrain_shadowkill"
+display_name."Skip Distant Terrain Self-Shadows"
+description."Reduces GPU shadow workload by skipping redundant terrain hill self-shadowing."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."skip_terrain_bucket"
+		va."0x1410C5B57"
+		orig."0F 84 A7 00 00 00 (je 0x1410c5c04)"
+		bytes."E9 A8 00 00 00 90 (jmp 0x1410c5c04; nop)"

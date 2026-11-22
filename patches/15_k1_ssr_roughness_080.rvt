@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."k1_ssr_roughness_080"
+display_name."Trim Rough-Surface Reflections"
+description."Slightly tightens screen-space reflection cutoff on rough surfaces for faster GPU performance (when RT is off)."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."ssr_roughness_cutoff_080"
+		va."0x14121EC02"
+		orig."F3 0F 59 99 38 02 00 00"
+		stub_bytes."F3 0F 59 99 38 02 00 00 48 8D 64 24 F8 C7 04 24 CD CC 4C 3F F3 0F 59 1C 24 48 8D 64 24 08"

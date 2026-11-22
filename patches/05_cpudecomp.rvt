@@ -1,0 +1,12 @@
+// Glitch performance patch
+name."dstorage_cpudecomp"
+display_name."CPU Asset Decompression"
+description."Moves asset decompression from the GPU to the CPU, freeing GPU headroom during streaming and traversal."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."disable_gpu_decomp"
+		va."0x141078F6D"
+		orig."C6 85 35 04 00 00 00"
+		bytes."C6 85 35 04 00 00 01"

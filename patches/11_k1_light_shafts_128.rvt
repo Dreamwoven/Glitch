@@ -1,0 +1,17 @@
+// Glitch performance patch
+name."k1_light_shafts_128"
+display_name."Half-Res Light Shafts"
+description."Halves internal light-shaft (god ray) buffer resolution for faster rendering with soft, similar visuals."
+enabled.true
+
+patches.arr;
+	.obj;
+		id."light_shafts_minmax_128"
+		va."0x145336CB4"
+		orig."00 01 00 00"
+		bytes."80 00 00 00"
+	.obj;
+		id."light_shafts_rectified_128"
+		va."0x145336CE4"
+		orig."00 01 00 00"
+		bytes."80 00 00 00"
