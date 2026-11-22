@@ -1,0 +1,19 @@
+// Example declarative .rvt patch manifest for RiftLoader.
+// Drop into <game_dir>/riftloader/patches/ to load automatically.
+// Shipped disabled by default so you can live-toggle it in the console:
+//   rift> patch enable P5_terrain_shadowkill
+//   rift> patch disable P5_terrain_shadowkill
+
+name."P5_terrain_shadowkill"
+description."Skip SubmitTerrainShadowCastersAsync bucket (terrain self-shadow unaffected)"
+author."RiftApart RE"
+enabled.false
+
+patches.arr;
+	.obj;
+		id."skip_terrain_bucket"
+		// Static VA from Binaries/RiftApart.exe v3.630.1.0 (ASLR-adjusted automatically).
+		va."0x1410C5B57"
+		// Original bytes verified before patching (safe rollback on disable/reload).
+		orig."0F 84 A7 00 00 00"
+		bytes."E9 A8 00 00 00 90"
